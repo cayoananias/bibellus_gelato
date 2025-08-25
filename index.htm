@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bibellus Gelato – Cardápio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Bibellus Gelato</h1>
+    <nav></nav>
+  </header>
+
+  <main>
+    <h2>Nosso Cardápio</h2>
+    <div class="carousel">
+      <div class="slides">
+        <div class="slide" data-name="Sorvete Chocolate" data-prices='{"180":13,"286":18,"480":23,"720":28}'>
+          <img src="images/chocolate.jpg" alt="Chocolate" />
+          <h3>Chocolate</h3>
+          <button class="add-cart" onclick="
+            const p1 = JSON.parse(this.parentElement.getAttribute('data-prices'));
+            const size1 = prompt('Tamanhos disponíveis (ml): 180, 286, 480, 720');
+            const price1 = p1[size1];
+            if(price1) addToCart('Sorvete Chocolate', size1+' ml', price1);
+          ">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="slide" data-name="Sorvete Morango" data-prices='{"180":13,"286":18,"480":23,"720":28}'>
+          <img src="images/sorvete_morango.jpg" alt="Sorvete de Morango" />
+          <h3>Morango</h3>
+          <button class="add-cart" onclick="
+            const p2 = JSON.parse(this.parentElement.getAttribute('data-prices'));
+            const size2 = prompt('Tamanhos disponíveis (ml): 180, 286, 480, 720');
+            const price2 = p2[size2];
+            if(price2) addToCart('Sorvete Morango', size2+' ml', price2);
+          ">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="slide" data-name="Sorvete Pistache" data-prices='{"180":13,"286":18,"480":23,"720":28}'>
+          <img src="images/pistache.jpg" alt="Pistache" />
+          <h3>Pistache</h3>
+          <button class="add-cart" onclick="
+            const p3 = JSON.parse(this.parentElement.getAttribute('data-prices'));
+            const size3 = prompt('Tamanhos disponíveis (ml): 180, 286, 480, 720');
+            const price3 = p3[size3];
+            if(price3) addToCart('Sorvete Pistache', size3+' ml', price3);
+          ">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="slide" data-name="Sorvete Pistache" data-prices='{"180":13,"286":18,"480":23,"720":28}'>
+          <img src="images/pistache.jpg" alt="Pistache" />
+          <h3>Pistache</h3>
+          <button class="add-cart" onclick="
+            const p4 = JSON.parse(this.parentElement.getAttribute('data-prices'));
+            const size4 = prompt('Tamanhos disponíveis (ml): 180, 286, 480, 720');
+            const price4 = p4[size4];
+            if(price3) addToCart('Sorvete Pistache', size3+' ml', price3);
+          ">Adicionar ao Carrinho</button>
+        </div>
+
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Razão Social: Bibellus varejo de sorvetes ltda • CNPJ: 02.291.863/0001-90</p>
+    <p>Contato-nos: <a href="mailto:comunicacoes@bibellusgelato.com.br">comunicacoes@bibellusgelato.com.br</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
