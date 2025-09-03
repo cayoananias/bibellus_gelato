@@ -7,8 +7,7 @@ function checkLoginStatus() {
     if (!nav) return;
     nav.innerHTML = `
       <a href="index.html">Home</a>
-      <a href="about.html">Sobre Nós</a>
-      <a href="cart.html">Carrinho</a>`;
+      <a href="about.html">Sobre Nós</a>`;/*
     if (user) {
       const span = document.createElement('span');
       span.textContent = `Olá, ${user}`;
@@ -27,59 +26,12 @@ function checkLoginStatus() {
       login.href = 'login.html';
       login.textContent = 'Login';
       nav.appendChild(login);
-    }
-  }
-  
-  // --- CARRINHO ---
-  function getCart() {
-    return JSON.parse(localStorage.getItem('cart') || '[]');
-  }
-  
-  function saveCart(cart) {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
-  
-  // Adiciona item ao carrinho
-  function addToCart(name, size, price) {
-    const cart = getCart();
-    cart.push({ name, size, price });
-    saveCart(cart);
-    alert(`Adicionado: ${name} (${size})`);
-  }
-  
-  // Exibe itens na página cart.html
-  function displayCart() {
-    const cart = getCart();
-    const tbody = document.querySelector('#cart-body');
-    if (!tbody) return;
-  
-    if (cart.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="4">Carrinho vazio</td></tr>';
-      return;
-    }
-  
-    tbody.innerHTML = '';
-    cart.forEach((item, i) => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td>${item.name}</td>
-        <td>${item.size}</td>
-        <td>R$ ${item.price.toFixed(2)}</td>
-        <td><button onclick="removeItem(${i})">Remover</button></td>
-      `;
-      tbody.appendChild(tr);
-    });
-  }
-  
-  function removeItem(index) {
-    const cart = getCart();
-    cart.splice(index, 1);
-    saveCart(cart);
-    displayCart();
+    }*/
   }
   
   // --- CARROSSEL ---
   let slideIndex = 0;
+  let sorvetes = ["Chocolate", "Baunilha", "Flocos", "Morango", "Triple"];
   function showSlides() {
     const slides = document.querySelectorAll('.carousel .slide');
     if (!slides.length) return;
@@ -95,7 +47,11 @@ function checkLoginStatus() {
     document.querySelector('.carousel .next').onclick = () => {
       showSlides();
     };
-    setInterval(showSlides, 7000);
+    setInterval(showSlides, 5000);
+    for (let sorvete of sorvetes) {
+      document.querySelector('.carousel .slides').innerHTML += 
+        '<div class=\"slide\" data-name=\"Sorvete Chocolate\" data-prices=\'{\"180\":13,\"286\":18,\"480\":23,\"720\":28}\'><img src=\"images/Sorv. '+sorvete+'.jpg\" alt=\"'+sorvete+'\" /><h3>'+sorvete+'</h3>\</div\>'
+    }
   }
   
   // --- LOGIN ---
@@ -121,7 +77,6 @@ function checkLoginStatus() {
     checkLoginStatus();
     initCarousel();
     handleLoginForm();
-    displayCart();
   };
   
   
