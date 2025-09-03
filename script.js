@@ -36,7 +36,7 @@ function initHeader() {
     for (let sorvete of sorvetes) {
       document.querySelector('.carousel .slides').innerHTML += `
         <div class=\"slide\" data-name=\"Sorvete `+sorvete+`\" data-prices=\'{\"180\":13,\"286\":18,\"480\":23,\"720\":28}\'>
-          <img src=\"images/Sorv. `+sorvete+`.jpg\" alt=\"`+sorvete+`\" />
+          <img src=\"images/Sorv. `+sorvete+`.png\" alt=\"`+sorvete+`\" />
           <h3>`+sorvete+`</h3>
         </div>`
     }
