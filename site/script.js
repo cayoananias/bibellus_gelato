@@ -14,7 +14,7 @@ function initHeader() {
 
 // --- CARROSSEL ---
 let slideIndex = 0;
-let sorvetes = ["Pistache", "Baunilia", "Flocos", "Morango", "Morango.Truf", "Morango2","Napolitano", "Charge", "Acai", "Abac.vinho"];
+let sorvetes = ["Pistache", "Baunilia", "Flocos", "Morango", "Morango.Truf", "Napolitano", "Charge", "Acai", "Abac.vinho"];
 function showSlides() {
   const slides = document.querySelectorAll('.carousel .slide');
   if (!slides.length) return;
@@ -38,8 +38,8 @@ function initCarousel() {
   showSlidesInt = setInterval(showSlides, 5000);
   for (let sorvete of sorvetes) {
     document.querySelector('.carousel .slides').innerHTML += `
-      <div class=\"slide\" data-name=\"Sorvete `+sorvete+`\" data-prices=\'{\"180\":13,\"286\":18,\"480\":23,\"720\":28}\'>
-        <img src=\"images/Sorv.`+sorvete+`.png\" alt=\"`+sorvete+`\" />
+      <div class="slide" data-name="Sorvete `+sorvete+`" data-prices='{"180":13,"286":18,"480":23,"720":28}'>
+        <img src="../images/Sorv.`+sorvete+`.png" alt=`+sorvete+`" style="height:400px"><img/>
         <h3>`+sorvete+`</h3>
       </div>`
   }
