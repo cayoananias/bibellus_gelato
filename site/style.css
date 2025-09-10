@@ -1,6 +1,7 @@
 /*ola galerinha bem vindos ao css */
 /*Olá, Cayo.*/
 /*Sempre com Y ryan kkkk*/
+/*que*/
 
 * {
   box-sizing: border-box;
@@ -28,6 +29,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 header nav a {
@@ -56,7 +58,7 @@ footer {
   font-size: 0.9em;
   padding: 20px;
   text-align: center;
-}
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);}
 
 footer a {
   color: #fff;
