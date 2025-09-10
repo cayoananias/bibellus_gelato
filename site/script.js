@@ -3,13 +3,25 @@
 // Atualiza o menu de navegação conforme login
 function initHeader() {
   if (!document.querySelector('header')) return;
-  document.querySelector('header').innerHTML = `
+  headertext = `
+    <h1>Bibellos Gelato</h1>
+    <nav>
+  `
+  headertext += (!window.location.href.includes("index.html")) ? `<a href="index.html">Cardapio</a>` : `<b>Cardapio</b>`
+  headertext += (!window.location.href.includes("about.html")) ? `<a href="about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
+  headertext += (!window.location.href.includes("contato.html")) ? `<a href="contato.html">Contato</a>` : `<b>Contato</b>`
+  
+  headertext += `
+  </nav>`
+
+  document.querySelector('header').innerHTML = headertext
+  /*document.querySelector('header').innerHTML = `
     <h1>Bibellus Gelato</h1>
     <nav>
       <a href="index.html">Cardapio</a>
       <a href="about.html">Sobre Nós</a>
       <a href="contato.html">Contato</a>
-    </nav>`;
+    </nav>`;*/
 }
 
 // --- CARROSSEL ---
@@ -32,13 +44,14 @@ function initCarousel() {
   };
   document.querySelector('.carousel .next').onclick = () => {
     showSlides();
+
     clearInterval(showSlidesInt);
     showSlidesInt = setInterval(showSlides, 5000);
   };
   showSlidesInt = setInterval(showSlides, 5000);
   for (let sorvete of sorvetes) {
     document.querySelector('.carousel .slides').innerHTML += `
-      <div class="slide" data-name="Sorvete `+sorvete+`" data-prices='{"180":13,"286":18,"480":23,"720":28}'>
+      <div class="slide">
         <img src="../images/Sorv.`+sorvete+`.png" alt=`+sorvete+`" style="height:400px"><img/>
         <h3>`+sorvete+`</h3>
       </div>`
@@ -51,6 +64,7 @@ function initFooter() {
   <p>Razão Social: Bibellus varejo de sorvetes ltda • CNPJ: 02.291.863/0001-90</p>
   <p>Contato-nos: <a href="mailto:comunicacoes@bibellusgelato.com.br">comunicacoes@bibellusgelato.com.br</a></p>`
 }
+
 // inicialização em todas as páginas
 window.onload = () => {
   initHeader();
