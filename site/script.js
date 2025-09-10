@@ -52,7 +52,7 @@ function initCarousel() {
   for (let sorvete of sorvetes) {
     document.querySelector('.carousel .slides').innerHTML += `
       <div class="slide">
-        <img src="../images/Sorv.`+sorvete+`.png" alt=`+sorvete+`" style="height:400px"><img/>
+        <img src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.`+sorvete+`.png" alt=`+sorvete+`" style="height:400px"><img/>
         <h3>`+sorvete+`</h3>
       </div>`
   }
