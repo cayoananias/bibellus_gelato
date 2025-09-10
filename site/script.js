@@ -4,7 +4,7 @@
 function initHeader() {
   if (!document.querySelector('header')) return;
   headertext = `
-    <h1>Bibellos Gelato</h1>
+    <h1>Bibellus Gelato</h1>
     <nav>
   `
   headertext += (!window.location.href.includes("index.html")) ? `<a href="index.html">Cardapio</a>` : `<b>Cardapio</b>`
