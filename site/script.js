@@ -8,8 +8,8 @@ function initHeader() {
     <nav>
   `
   headertext += (!window.location.href.includes("index.html")) ? `<a href="index.html">Cardapio</a>` : `<b>Cardapio</b>`
-  headertext += (!window.location.href.includes("about.html")) ? `<a href="site/about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
-  headertext += (!window.location.href.includes("contato.html")) ? `<a href="site/contato.html">Contato</a>` : `<b>Contato</b>`
+  headertext += (!window.location.href.includes("site/about.html")) ? `<a href="site/about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
+  headertext += (!window.location.href.includes("site/contato.html")) ? `<a href="site/contato.html">Contato</a>` : `<b>Contato</b>`
   
   headertext += `
   </nav>`
