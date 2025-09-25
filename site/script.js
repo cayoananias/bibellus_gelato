@@ -3,13 +3,14 @@
 // Atualiza o menu de navegação conforme login
 function initHeader() {
   if (!document.querySelector('header')) return;
+  let currentlink = window.location.href
   headertext = `
     <h1>Bibellus Gelato</h1>
     <nav>
   `
-  headertext += (!window.location.href.includes("index.html")) ? `<a href="index.html">Cardapio</a>` : `<b>Cardapio</b>`
-  headertext += (!window.location.href.includes("about.html")) ? `<a href="about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
-  headertext += (!window.location.href.includes("contato.html")) ? `<a href="contato.html">Contato</a>` : `<b>Contato</b>`
+  headertext += (!currentlink.includes("index.html") && currentlink.includes(/about.html|contato.html/)) ? `<a href="index.html">Cardapio</a>` : `<b>Cardapio</b>`
+  headertext += (!currentlink.includes("about.html")) ? `<a href="about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
+  headertext += (!currentlink.includes("contato.html")) ? `<a href="contato.html">Contato</a>` : `<b>Contato</b>`
   
   headertext += `
   </nav>`
