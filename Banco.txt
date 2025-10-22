@@ -1,0 +1,307 @@
+create database bibellus;
+use bibellus;
+
+create table empresa (
+nome varchar (200),
+cnpj varchar (18),
+inscricao varchar (15),
+cnae varchar (7),
+telefone varchar (13),
+celular varchar (14),
+email varchar (200),
+site varchar (200),
+endereco varchar (200),
+cep varchar (10)
+);
+
+create table socios (
+id int not null auto_increment primary key,
+nome varchar (200),
+cpf varchar (14)
+);
+
+drop table socios;
+
+create table fornecedores (
+id int not null primary key auto_increment,
+empresa varchar (200),
+categoria varchar (200)
+);
+
+drop table fornecedores;
+
+create table despesas (
+tipos varchar (200),
+valor varchar (200),
+observacao varchar (200)
+) ;
+
+create table vendas (
+data date,
+pagamento varchar (200),
+valor varchar (200)
+) ;
+
+create table acompanhamento (
+id int not null primary key auto_increment,
+descricao varchar (200)
+) ;
+
+drop table acompanhamento;
+
+create table sorvete (
+id int not null primary key auto_increment,
+sabor varchar (200)
+) ;
+
+
+create table descartavel (
+id int not null primary key auto_increment,
+tipo varchar (200)
+) ;
+
+
+create table unidade (
+id int not null primary key auto_increment,
+descricao varchar (200)
+) ;
+
+create table tipo (
+id int not null primary key auto_increment,
+descricao varchar (200)
+) ;
+
+create table produto (
+id int not null primary key auto_increment,
+id_tipo_fk int not null,
+descricao varchar (200),
+foreign key (id_tipo_fk) references tipo(id)
+) ;
+
+drop table produto;
+
+create table estoque (
+id int not null primary key auto_increment,
+id_produto_fk int not null,
+id_unidade_fk int not null,
+quantidade int not null,
+atualizacao date,
+foreign key (id_produto_fk) references produto(id),
+foreign key (id_unidade_fk) references unidade(id)
+) ;
+
+drop table estoque;
+
+insert into empresa(nome,cnpj,inscricao,cnae,telefone,celular,email,site,endereco,cep)
+values (
+'bibellus varejo de sorvetes ltda',
+'02.291.863/0001-90',
+'737.790.720.836',
+'4729-6',
+'(11)3899-8806',
+'(11)98722-8735',
+'comunicacoes@bibellusgelato.com.br',
+'www.bibellusgelato.com.br',
+'rua consolacao, nº 2043, consolacao-sao paulo',
+'013001-907'
+) ;
+
+insert into socios(id,nome,cpf)
+values (1,'ana beatriz francisca de campos','358.429.758-00');
+insert into socios(id,nome,cpf)
+values (2,'matheus matias souza','419.683.928-02');
+insert into socios(id,nome,cpf)
+values (3,'milena da silva marinheiro','298.517.869-05');
+
+insert into fornecedores(empresa,categoria)
+values ('nelimel','sorvetes');
+insert into fornecedores(empresa,categoria)
+values ('magazine luiza','eletrodomesticos');
+insert into fornecedores(empresa,categoria)
+values ('click embalagens','descartaveis');
+insert into fornecedores(empresa,categoria)
+values ('atacadao','acompanhamentos');
+
+insert into despesas(tipos,valor,observacao)
+values ('freezer', '799.98','parcelado em 10x (total: 7999.80)');
+insert into despesas(tipos,valor,observacao)
+values ('expositor e acompanhamentos','649.36','');
+insert into despesas(tipos,valor,observacao)
+values ('internet e telefonia','200','');
+insert into despesas(tipos,valor,observacao)
+values ('recompra de mercadorias','600','');
+
+insert into acompanhamento(descricao)
+values ('caldas');
+insert into acompanhamento(descricao)
+values ('cereais');
+insert into acompanhamento(descricao)
+values ('confete');
+insert into acompanhamento(descricao)
+values ('chocoboll');
+insert into acompanhamento(descricao)
+values ('farofa de amendoim');
+insert into acompanhamento(descricao)
+values ('bala de gelatina');
+insert into acompanhamento(descricao)
+values ('leite em po');
+insert into acompanhamento(descricao)
+values ('canudinho');
+insert into acompanhamento(descricao)
+values ('casquinha');
+
+insert into sorvete(sabor) values('abacaxi ao vinho');
+insert into sorvete(sabor) values('charge');
+insert into sorvete(sabor) values('chiclete');
+insert into sorvete(sabor) values('chocolate');
+insert into sorvete(sabor) values('creme');
+insert into sorvete(sabor) values('flocos');
+insert into sorvete(sabor) values('limao');
+insert into sorvete(sabor) values('mamao papaia');
+insert into sorvete(sabor) values('morango');
+insert into sorvete(sabor) values('morango trufado');
+insert into sorvete(sabor) values('ninho');
+insert into sorvete(sabor) values('napolitano');
+insert into sorvete(sabor) values('pistache');
+insert into sorvete(sabor) values('prestigio');
+insert into sorvete(sabor) values('floresta negra');
+
+insert into descartavel(tipo) values('copo 180ml');
+insert into descartavel(tipo) values('copo 286ml');
+insert into descartavel(tipo) values('copo 480ml');
+insert into descartavel(tipo) values('copo 720ml');
+insert into descartavel(tipo) values('colher');
+insert into descartavel(tipo) values('guardanapo');
+
+insert into unidade(descricao)
+values ('litro');
+insert into unidade(descricao)
+values ('quilo');
+insert into unidade(descricao)
+values ('pacote');
+
+insert into tipo(descricao) values('acompanhamento');
+insert into tipo(descricao) values('descartavel');
+insert into tipo(descricao) values('sorvete');
+
+insert into produto(id_tipo_fk,descricao)
+values (3,'abacaxi ao vinho');
+insert into produto(id_tipo_fk,descricao)
+values (3,'charge');
+insert into produto(id_tipo_fk,descricao)
+values (3,'chiclete');
+insert into produto(id_tipo_fk,descricao)
+values (3,'chocolate');
+insert into produto(id_tipo_fk,descricao)
+values (3,'creme');
+insert into produto(id_tipo_fk,descricao)
+values (3,'flocos');
+insert into produto(id_tipo_fk,descricao)
+values (3,'limao');
+insert into produto(id_tipo_fk,descricao)
+values (3,'mamao papaya');
+insert into produto(id_tipo_fk,descricao)
+values (3,'morango');
+insert into produto(id_tipo_fk,descricao)
+values (3,'morango trufado');
+insert into produto(id_tipo_fk,descricao)
+values (3,'ninho');
+insert into produto(id_tipo_fk,descricao)
+values (3,'napolitano');
+insert into produto(id_tipo_fk,descricao)
+values (3,'pitache');
+insert into produto(id_tipo_fk,descricao)
+values (3,'prestigio');
+insert into produto(id_tipo_fk,descricao)
+values (3,'floresta negra');
+insert into produto(id_tipo_fk,descricao)
+values (1,'caldas');
+insert into produto(id_tipo_fk,descricao)
+values (1,'cereais');
+insert into produto(id_tipo_fk,descricao)
+values (1,'confete');
+insert into produto(id_tipo_fk,descricao)
+values (1,'chocoboll');
+insert into produto(id_tipo_fk,descricao)
+values (1,'farofa de amendoim');
+insert into produto(id_tipo_fk,descricao)
+values (1,'bala de gelatina');
+insert into produto(id_tipo_fk,descricao)
+values (1,'leite em pó');
+insert into produto(id_tipo_fk,descricao)
+values (1,'canudinho');
+insert into produto(id_tipo_fk,descricao)
+values (1,'casquinha');
+insert into produto(id_tipo_fk,descricao)
+values (2,'copo 180ml');
+insert into produto(id_tipo_fk,descricao)
+values (2,'copo 286ml');
+insert into produto(id_tipo_fk,descricao)
+values (2,'copo 480ml');
+insert into produto(id_tipo_fk,descricao)
+values (2,'copo 720ml');
+insert into produto(id_tipo_fk,descricao)
+values (2,'colher');
+insert into produto(id_tipo_fk,descricao)
+values (2,'guardanapo');
+
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (1,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (2,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (3,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (4,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (5,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (6,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (7,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (8,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (9,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (10,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (11,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (12,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (13,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (14,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (15,1,12,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (16,2,5,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (17,2,5,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (18,2,5,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (19,2,5,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (20,2,5,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (21,2,5,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (22,2,5,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (23,2,5,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (24,3,30,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (25,3,15,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (26,3,15,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (27,3,15,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (28,3,15,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (29,3,15,'2025-05-26');
+insert into estoque(id_produto_fk,id_unidade_fk,quantidade,atualizacao)
+values (30,3,15,'2025-05-26');
