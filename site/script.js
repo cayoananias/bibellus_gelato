@@ -8,7 +8,7 @@ function initHeader() {
     <h1>Bibellus Gelato</h1>
     <nav>
   `
-  headertext += (!currentlink.includes("index.html") && (currentlink.includes("about.html") || currentlink.includes("contato.html"))) ? `<a href="index.html">Cardapio</a>` : `<b>Cardapio</b>`
+  headertext += (!currentlink.includes("index.html") && (currentlink.includes("about.html") || currentlink.includes("contato.html"))) ? `<a href="index.html">Cardápio</a>` : `<b>Cardápio</b>`
   headertext += (!currentlink.includes("about.html")) ? `<a href="about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
   headertext += (!currentlink.includes("contato.html")) ? `<a href="contato.html">Contato</a>` : `<b>Contato</b>`
   
@@ -27,7 +27,7 @@ function initHeader() {
 
 // --- CARROSSEL ---
 let slideIndex = 0;
-let sorvetes = ["Pistache", "Baunilia", "Flocos", "Morango", "Morango.Truf", "Napolitano", "Charge", "Acai", "Abac.vinho"];
+let sorvetes = ["Pistache", "Creme", "Flocos", "Morango", "Morango.Truf", "Napolitano", "Charge", "Acaí", "Abac.vinho"];
 function showSlides() {
   const slides = document.querySelectorAll('.carousel .slide');
   if (!slides.length) return;
