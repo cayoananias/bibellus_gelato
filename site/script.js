@@ -5,7 +5,8 @@ function initHeader() {
   if (!document.querySelector('header')) return;
   let currentlink = window.location.href
   headertext = `
-    <h1>Bibellus Gelato</h1>
+    <div><img src="https://cayoananias.github.io/bibellus_gelato/images/logo.jpeg" style="height:30px"></img>
+    <h1 style="display: inline">Bibellus Gelato</h1></div>
     <nav>
   `
   headertext += (!currentlink.includes("index.html") && (currentlink.includes("about.html") || currentlink.includes("contato.html"))) ? `<a href="index.html">Cardápio</a>` : `<b>Cardápio</b>`
@@ -16,13 +17,6 @@ function initHeader() {
   </nav>`
 
   document.querySelector('header').innerHTML = headertext
-  /*document.querySelector('header').innerHTML = `
-    <h1>Bibellus Gelato</h1>
-    <nav>
-      <a href="index.html">Cardapio</a>
-      <a href="about.html">Sobre Nós</a>
-      <a href="contato.html">Contato</a>
-    </nav>`;*/
 }
 
 // --- CARROSSEL ---
