@@ -1,200 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibellus Gellato - Contato</title>
-    <link rel="icon" type="image/x-icon" href="https://cayoananias.github.io/bibellus_gelato/images/favicon/favicon.ico">
-    <link rel="stylesheet" href="https://cayoananias.github.io/bibellus_gelato/site/style.css">
-    <script src="https://cayoananias.github.io/bibellus_gelato/site/script.js"></script>
-    <style>
-        .letter-image {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 200px;
-	height: 200px;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	cursor: pointer;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibellus Gelato - Contato</title>
+  <link rel="icon" type="image/x-icon" href="https://cayoananias.github.io/bibellus_gelato/images/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cayoananias.github.io/bibellus_gelato/site/style.css">
+  <script src="https://cayoananias.github.io/bibellus_gelato/site/script.js"></script>
 
-.animated-mail {
-	position: absolute;
-	height: 150px;
-	width: 200px;
-	-webkit-transition: .4s;
-	-moz-transition: .4s;
-	transition: .4s;
-	
-	.body {
-		position: absolute;
-		bottom: 0;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 0 0 100px 200px;
-		border-color: transparent transparent #e95f55 transparent;
-		z-index: 2;
-	}
-	
-	.top-fold {
-		position: absolute;
-		top: 50px;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 50px 100px 0 100px;
-		-webkit-transform-origin: 50% 0%;
-		-webkit-transition: transform .4s .4s, z-index .2s .4s;
-		-moz-transform-origin: 50% 0%;
-		-moz-transition: transform .4s .4s, z-index .2s .4s;
-		transform-origin: 50% 0%;
-		transition: transform .4s .4s, z-index .2s .4s;
-		border-color: #cf4a43 transparent transparent transparent;
-		z-index: 2;
-	}
-	
-	.back-fold {
-		position: absolute;
-		bottom: 0;
-		width: 200px;
-		height: 100px;
-		background: #cf4a43;
-		z-index: 0;
-	}
-	
-	.left-fold {
-		position: absolute;
-		bottom: 0;
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 50px 0 50px 100px;
-		border-color: transparent transparent transparent #e15349;
-		z-index: 2;
-	}
-	
-	.letter {
-		left: 20px;
-		bottom: 0px;
-		position: absolute;
-		width: 160px;
-		height: 60px;
-		background: white;
-		z-index: 1;
-		overflow: hidden;
-		-webkit-transition: .4s .2s;
-		-moz-transition: .4s .2s;
-		transition: .4s .2s;
-		
-		.letter-border {
-			height: 10px;
-			width: 100%;
-      background: repeating-linear-gradient(
-        -45deg,
-        #cb5a5e,
-        #cb5a5e 8px,
-        transparent 8px,
-        transparent 18px
-      );
-		}
-		
-		.letter-title {
-			margin-top: 10px;
-			margin-left: 5px;
-			height: 10px;
-			width: 40%;
-			background: #cb5a5e;
-		}
-		.letter-context {
-			margin-top: 10px;
-			margin-left: 5px;
-			height: 10px;
-			width: 20%;
-			background: #cb5a5e;
-		}
-		
-		.letter-stamp {
-			margin-top: 30px;
-			margin-left: 120px;
-			border-radius: 100%;
-			height: 30px;
-			width: 30px;
-			background: #cb5a5e;
-			opacity: 0.3;
-		}
-	}
-}
+  <style>
+    .contact-form {
+      max-width: 420px;
+      margin: 100px auto 80px;
+      background: #fff8f2;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-.shadow {
-	position: absolute;
-	top: 200px;
-	left: 50%;
-	width: 400px;
-	height: 30px;
-	transition: .4s;
-	transform: translateX(-50%);
-	-webkit-transition: .4s;
-	-webkit-transform: translateX(-50%);
-	-moz-transition: .4s;
-	-moz-transform: translateX(-50%);
-	
-	border-radius: 100%;
-	background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
-}
+    .contact-form h2 {
+      color: #955a2d;
+      margin-bottom: 20px;
+    }
 
-	.letter-image:hover {
-		.animated-mail {
-			transform: translateY(50px);
-			-webkit-transform: translateY(50px);
-			-moz-transform: translateY(50px);
-		}
-		
-		.animated-mail .top-fold {
-			transition: transform .4s, z-index .2s;
-			transform: rotateX(180deg);
-			-webkit-transition: transform .4s, z-index .2s;
-			-webkit-transform: rotateX(180deg);
-			-moz-transition: transform .4s, z-index .2s;
-			-moz-transform: rotateX(180deg);
-			z-index: 0;
-		}
-		
-		.animated-mail .letter {
-			height: 180px;
-		}
-		
-		.shadow {
-			width: 250px;
-		}
-	}
-    </style>
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d8b58a;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-family: inherit;
+      resize: none;
+    }
+
+    .contact-form button {
+      width: 100%;
+      padding: 12px;
+      background: #fd75a2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #e75b8d;
+    }
+
+    @media (max-width: 600px) {
+      .contact-form { margin-top: 80px; }
+    }
+  </style>
 </head>
-<body>
-    <header>
-    </header>
-    <main>
-        <div class="letter-image">
-	<div class="animated-mail">
-		<div class="back-fold"></div>
-		<div class="letter">
-			<div class="letter-border"></div>
-			<div class="letter-title"></div>
-			<div class="letter-context"></div>
-			<div class="letter-stamp">
-				<div class="letter-stamp-inner"></div>
-			</div>
-		</div>
-		<div class="top-fold"></div>
-		<div class="body"></div>
-		<div class="left-fold"></div>
-	</div>
-	<div class="shadow"></div>
-</div>
-    </main>
 
-    <footer></footer>
+<body>
+  <header></header>
+
+  <main>
+    <section class="contact-form" id="formulario">
+      <h2>Fale Conosco</h2>
+      <form action="https://formsubmit.co/comunicacoes@bibellusgelato.com.br" method="POST">
+        <input type="text" name="name" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
+  </main>
+
+  <footer></footer>
 </body>
 </html>
