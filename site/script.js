@@ -5,7 +5,7 @@ function initHeader() {
   if (!document.querySelector('header')) return;
   let currentlink = window.location.href
   headertext = `
-    <div><img src="https://cayoananias.github.io/bibellus_gelato/images/logo.png" style="height:30px"></img>
+    <div style="display:flex;justify-content:center"><img src="https://cayoananias.github.io/bibellus_gelato/images/logo.png" style="height:36px"></img>
     <h1 style="display: inline">Bibellus Gelato</h1></div>
     <nav>
   `
