@@ -21,7 +21,7 @@ function initHeader() {
 
 // --- CARROSSEL ---
 let slideIndex = 0;
-let sorvetes = ["Pistache", "Creme", "Flocos", "Morango", "Morango.Truf", "Napolitano", "Charge", "Acaí", "Abacaxi de vinho"];
+let sorvetes = ["Pistache", "Creme", "Flocos", "Morango", "Morango.Truf", "Napolitano", "Charge", "Acaí", "Abacaxi ao vinho"];
 function showSlides() {
   const slides = document.querySelectorAll('.carousel .slide');
   if (!slides.length) return;
