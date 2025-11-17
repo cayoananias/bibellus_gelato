@@ -9,100 +9,105 @@
   <script src="https://cayoananias.github.io/bibellus_gelato/site/script.js"></script>
 
   <style>
-    .divao-contato {
-      background: linear-gradient(#fd75a290, #fd75a290),
-                  url("https://images.unsplash.com/photo-1527904219733-fddc74937915?q=80&w=2070&auto=format")
-                  center/cover;
-      color: white;
-      padding: 80px 20px;
-      text-align: center;
-    }
+  .divao-contato {
+  background: linear-gradient(#fd75a290, #fd75a290),
+  url("https://images.unsplash.com/photo-1527904219733-fddc74937915?q=80&w=2070&auto=format")
+  center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
 
-    .divao-contato h1 {
-      font-size: 2.4rem;
-      font-weight: bold;
-    }
+  .divao-contato h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  }
 
-    .divao-contato p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-    }
+  .divao-contato p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  }
 
-    .contato-container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
+  .contato-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  }
 
-    .info-bloco {
-      background: #fff8f2;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+  .info-bloco {
+  background: #fff8f2;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
 
-    .info-bloco h2 {
-      color: #955a2d;
-      margin-bottom: 20px;
-      font-size: 1.6rem;
-    }
+  .info-bloco h2 {
+  color: #955a2d;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  }
 
-    .info-item {
-      margin-bottom: 18px;
-      font-size: 1.1rem;
-    }
+  .info-item {
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  }
 
-    .info-item b {
-      color: #955a2d;
-    }
+  .info-item b {
+  color: #955a2d;
+  }
 
-    .form-bloco {
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
+  .form-bloco {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
 
-    .form-bloco h2 {
-      color: #955a2d;
-      margin-bottom: 20px;
-    }
+  .form-bloco h2 {
+  color: #955a2d;
+  margin-bottom: 20px;
+  }
 
-    .form-bloco input,
-    .form-bloco textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border-radius: 6px;
-      border: 1px solid #d8b58a;
-      background: #fff8f2;
-      font-family: inherit;
-    }
+  .form-bloco input,
+  .form-bloco textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #d8b58a;
+  background: #fff8f2;
+  font-family: inherit;
+  }
 
-    .form-bloco button {
-      width: 100%;
-      padding: 14px;
-      background: #fd75a2;
-      border: none;
-      color: white;
-      font-size: 1.1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+  .form-bloco button {
+  width: 100%;
+  padding: 14px;
+  background: #fd75a2;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  }
 
-    .form-bloco button:hover {
-      background: #e75b8d;
-    }
+  .form-bloco button:hover {
+  background: #e75b8d;
+  }
 
-    @media (max-width: 900px) {
-      .contato-container {
-        grid-template-columns: 1fr;
-      }
-    }
+  @media (max-width: 900px) {
+  .contato-container {
+  grid-template-columns: 1fr;
+  }
+  }
   </style>
 </head>
 
