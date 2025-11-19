@@ -9,7 +9,7 @@ function initHeader() {
     <h1 style="display: inline">Bibellus Gelato</h1></div>
     <nav>
   `
-  headertext += (!currentlink.includes("index.html") && (currentlink.includes("about.html") || currentlink.includes("contato.html"))) ? `<a href="index.html">Cardápio</a>` : `<b>Cardápio</b>`
+  headertext += (!currentlink.includes("cardapio.html")) ? `<a href="cardapio.html">Cardápio</a>` : `<b>Cardápio</b>`
   headertext += (!currentlink.includes("about.html")) ? `<a href="about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
   headertext += (!currentlink.includes("contato.html")) ? `<a href="contato.html">Contato</a>` : `<b>Contato</b>`
   
