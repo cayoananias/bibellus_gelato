@@ -2,88 +2,73 @@ drop database if exists bibellus;
 create database if not exists bibellus;
 use bibellus;
 
-create table if not exists empresa (
-id int not null auto_increment primary key,
-nome varchar(200) not null,
-cnpj varchar(20),
-inscricao varchar(30),
-cnae varchar(20),
-telefone varchar(20),
-celular varchar(20),
-email varchar(200),
-site varchar(200),
-endereco varchar(300),
-cep varchar(20)
+create table empresa (
+    id int not null auto_increment primary key,
+    nome varchar(200) not null,
+    cnpj varchar(20),
+    inscricao varchar(30),
+    cnae varchar(20),
+    telefone varchar(20),
+    celular varchar(20),
+    email varchar(200),
+    site varchar(200),
+    endereco varchar(300),
+    cep varchar(20)
 );
 
-create table if not exists socios (
-id int not null auto_increment primary key,
-nome varchar(200) not null,
-cpf varchar(20)
+create table socios (
+    id int not null auto_increment primary key,
+    nome varchar(200) not null,
+    cpf varchar(20)
 );
 
-create table if not exists fornecedores (
-id int not null auto_increment primary key,
-empresa varchar(200) not null,
-categoria varchar(100), 
-contato varchar(200)
+create table fornecedores (
+    id int not null auto_increment primary key,
+    empresa varchar(200) not null,
+    categoria varchar(100), 
+    contato varchar(200)
 );
 
-create table if not exists despesas (
-id int not null auto_increment primary key,
-tipo varchar(200),
-valor decimal(10,2),
-observacao varchar(200)
+create table despesas (
+    id int not null auto_increment primary key,
+    tipo varchar(200),
+    valor decimal(10,2),
+    observacao varchar(200)
 );
 
-create table if not exists vendas (
-id int not null auto_increment primary key,
-data date,
-pagamento varchar(100),
-valor decimal(10,2),
-observacao varchar(200)
+create table vendas (
+    id int not null auto_increment primary key,
+    data date,
+    pagamento varchar(100),
+    valor decimal(10,2),
+    observacao varchar(200)
 );
 
-create table if not exists acompanhamento (
-id int not null auto_increment primary key,
-descricao varchar(200) not null
+create table unidade (
+    id int not null auto_increment primary key,
+    descricao varchar(100) not null
 );
 
-create table if not exists sorvete (
-id int not null auto_increment primary key,
-sabor varchar(200) not null
+create table tipo (
+    id int not null auto_increment primary key,
+    descricao varchar(100) not null
 );
 
-create table if not exists descartavel (
-id int not null auto_increment primary key,
-tipo varchar(200) not null
+create table produto (
+    id int not null auto_increment primary key,
+    id_tipo_fk int not null,
+    descricao varchar(200) not null,
+    foreign key (id_tipo_fk) references tipo(id)
 );
 
-create table if not exists unidade (
-id int not null auto_increment primary key,
-descricao varchar(100) not null
-);
-
-create table if not exists tipo (
-id int not null auto_increment primary key,
-descricao varchar(100) not null
-);
-
-create table if not exists produto (
-id int not null auto_increment primary key,
-id_tipo_fk int not null,
-descricao varchar(200) not null,
-FOREIGN KEY (id_tipo_fk) REFERENCES tipo(id)
-);
-
-create table if not exists estoque (
-id int not null auto_increment primary key,
-id_produto_fk int not null,
-id_unidade_fk int not null,
-quantidade int not null default 0,
-atualizacao date,
-foreign key (id_produto_fk) references produto(id),
-foreign key (id_unidade_fk) references unidade(id)
+create table estoque (
+    id int not null auto_increment primary key,
+    id_produto_fk int not null,
+    id_unidade_fk int not null,
+    quantidade int not null default 0,
+    atualizacao date,
+    foreign key (id_produto_fk) references produto(id),
+    foreign key (id_unidade_fk) references unidade(id)
 );
 
 insert into empresa (nome,cnpj,inscricao,cnae,telefone,celular,email,site,endereco,cep)
@@ -117,42 +102,6 @@ insert into despesas (tipo,valor,observacao) values
 ('internet e telefonia',200.00,''),
 ('recompra de mercadorias',600.00,'');
 
-insert into acompanhamento (descricao) values
-('caldas'),
-('cereais'),
-('confete'),
-('chocoboll'),
-('farofa de amendoim'),
-('bala de gelatina'),
-('leite em pó'),
-('canudinho'),
-('casquinha');
-
-insert into sorvete (sabor) values
-('abacaxi ao vinho'),
-('charge'),
-('chiclete'),
-('chocolate'),
-('creme'),
-('flocos'),
-('limão'),
-('mamão papaia'),
-('morango'),
-('morango trufado'),
-('ninho'),
-('napolitano'),
-('pistache'),
-('prestígio'),
-('floresta negra');
-
-insert into descartavel (tipo) values
-('copo 180ml'),
-('copo 286ml'),
-('copo 480ml'),
-('copo 720ml'),
-('colher'),
-('guardanapo');
-
 insert into unidade (descricao) values
 ('litro'),
 ('quilo'),
@@ -163,37 +112,40 @@ insert into tipo (descricao) values
 ('descartavel'),
 ('sorvete');
 
-insert into produto (id, id_tipo_fk, descricao) values
-(1,3,'abacaxi ao vinho'),
-(2,3,'charge'),
-(3,3,'chiclete'),
-(4,3,'chocolate'),
-(5,3,'creme'),
-(6,3,'flocos'),
-(7,3,'limao'),
-(8,3,'mamao papaia'),
-(9,3,'morango'),
-(10,3,'morango trufado'),
-(11,3,'ninho'),
-(12,3,'napolitano'),
-(13,3,'pistache'),
-(14,3,'prestigio'),
-(15,3,'floresta negra'),
-(16,1,'caldas'),
-(17,1,'cereais'),
-(18,1,'confete'),
-(19,1,'chocoboll'),
-(20,1,'farofa de amendoim'),
-(21,1,'bala de gelatina'),
-(22,1,'leite em pó'),
-(23,1,'canudinho'),
-(24,1,'casquinha'),
-(25,2,'copo 180ml'),
-(26,2,'copo 286ml'),
-(27,2,'copo 480ml'),
-(28,2,'copo 720ml'),
-(29,2,'colher'),
-(30,2,'guardanapo');
+insert into produto (id_tipo_fk, descricao) values
+/*sorvetes*/
+(3,'abacaxi ao vinho'),
+(3,'charge'),
+(3,'chiclete'),
+(3,'chocolate'),
+(3,'creme'),
+(3,'flocos'),
+(3,'limão'),
+(3,'mamão papaia'),
+(3,'morango'),
+(3,'morango trufado'),
+(3,'ninho'),
+(3,'napolitano'),
+(3,'pistache'),
+(3,'prestígio'),
+(3,'floresta negra'),
+/*acompanhamentos*/
+(1,'caldas'),
+(1,'cereais'),
+(1,'confete'),
+(1,'chocoboll'),
+(1,'farofa de amendoim'),
+(1,'bala de gelatina'),
+(1,'leite em pó'),
+(1,'canudinho'),
+(1,'casquinha'),
+/*descartáveis*/
+(2,'copo 180ml'),
+(2,'copo 286ml'),
+(2,'copo 480ml'),
+(2,'copo 720ml'),
+(2,'colher'),
+(2,'guardanapo');
 
 insert into estoque (id_produto_fk,id_unidade_fk,quantidade,atualizacao) values
 (1,1,12,'2025-05-26'),
