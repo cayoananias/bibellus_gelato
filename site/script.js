@@ -23,39 +23,11 @@ function initHeader() {
   document.querySelector('header').innerHTML = headertext
 }
 
-// --- CARROSSEL ---
-let slideIndex = 0;
-let sorvetes = ["Pistache", "Creme", "Flocos", "Morango", "Morango.Truf", "Napolitano", "Charge", "Acaí", "Abacaxi ao vinho"];
-function showSlides() {
-  const slides = document.querySelectorAll('.carousel .slide');
-  if (!slides.length) return;
-  slideIndex = (slideIndex + 1) % slides.length;
-  const offset = -slideIndex * 100;
-  document.querySelector('.carousel .slides').style.transform = `translateX(${offset}%)`;
-}
-function initCarousel() {
-  document.querySelector('.carousel .prev').onclick = () => {
-    slideIndex = (slideIndex - 1 + document.querySelectorAll('.carousel .slide').length) % document.querySelectorAll('.carousel .slide').length;
-    document.querySelector('.carousel .slides').style.transform = `translateX(${-slideIndex*100}%)`;
-    
-    clearInterval(showSlidesInt);
-    showSlidesInt = setInterval(showSlides, 5000);
-  };
-  document.querySelector('.carousel .next').onclick = () => {
-    showSlides();
-
-    clearInterval(showSlidesInt);
-    showSlidesInt = setInterval(showSlides, 5000);
-  };
-  showSlidesInt = setInterval(showSlides, 5000);
-  for (let sorvete of sorvetes) {
-    document.querySelector('.carousel .slides').innerHTML += `
-      <div class="slide">
-        <img src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.`+sorvete+`.png" alt=`+sorvete+`" style="height:400px"><img/>
-        <h3>`+sorvete+`</h3>
-      </div>`
-  }
-}
+/*
+Aqui jaz o Carousel
+2025-2025
+Nunca te esqueceremos
+*/
 
 function initFooter() {
   if (!document.querySelector('footer')) return;
