@@ -4,18 +4,22 @@
 function initHeader() {
   if (!document.querySelector('header')) return;
   let currentlink = window.location.href
-  headertext = `
-    <div style="display:flex;justify-content:center"><img src="https://cayoananias.github.io/bibellus_gelato/images/logo.png" style="height:36px"></img>
-    <h1 style="display: inline">Bibellus Gelato</h1></div>
-    <nav>
-  `
-  headertext += (!currentlink.includes("cardapio.html")) ? `<a href="cardapio.html">Cardápio</a>` : `<b>Cardápio</b>`
-  headertext += (!currentlink.includes("about.html")) ? `<a href="about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
-  headertext += (!currentlink.includes("contato.html")) ? `<a href="contato.html">Contato</a>` : `<b>Contato</b>`
-  
-  headertext += `
-  </nav>`
-
+  if (currentlink.includes("cardapio.html") || currentlink.includes("about.html") || currentlink.includes("contato.html")) {
+    headertext = `
+      <div style="display:flex;justify-content:center"><img src="https://cayoananias.github.io/bibellus_gelato/images/logo.png" style="height:36px"></img>
+      <h1 style="display: inline">Bibellus Gelato</h1></div>
+      <nav>
+    `
+    headertext += (!currentlink.includes("cardapio.html")) ? `<a href="cardapio.html">Cardápio</a>` : `<b>Cardápio</b>`
+    headertext += (!currentlink.includes("about.html")) ? `<a href="about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
+    headertext += (!currentlink.includes("contato.html")) ? `<a href="contato.html">Contato</a>` : `<b>Contato</b>`
+    
+    headertext += `
+    </nav>`
+  }
+  else {
+    headertext = `<h1 style="font-size: 40px">Bibellus Gelato</h1>`
+  } 
   document.querySelector('header').innerHTML = headertext
 }
 
