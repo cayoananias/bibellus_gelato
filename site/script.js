@@ -6,7 +6,7 @@ function initHeader() {
   let currentlink = window.location.href
   if (currentlink.includes("cardapio.html") || currentlink.includes("about.html") || currentlink.includes("contato.html")) {
     headertext = `
-      <div style="display:flex;justify-content:center"><img src="https://cayoananias.github.io/bibellus_gelato/images/logo.png" style="height:36px"></img>
+      <div onclick="location.assign('index.html')" style="cursor: pointer;display:flex;justify-content:center"><img src="https://cayoananias.github.io/bibellus_gelato/images/logo.png" style="height:36px"></img>
       <h1 style="display: inline">Bibellus Gelato</h1></div>
       <nav>
     `
