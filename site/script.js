@@ -18,7 +18,7 @@ function initHeader() {
     </nav>`
   }
   else {
-    headertext = `<h1 style="font-size: 40px">Bibellus Gelato</h1>`
+    headertext = `<img src="https://cayoananias.github.io/bibellus_gelato/images/logo.png" style="height:36px"></img><h1 style="font-size: 40px">Bibellus Gelato</h1>`
   } 
   document.querySelector('header').innerHTML = headertext
 }
