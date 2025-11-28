@@ -38,10 +38,10 @@ create table despesas (
 
 create table vendas (
     id int not null auto_increment primary key,
-    data date,
     pagamento varchar(100),
     valor decimal(10,2),
-    observacao varchar(200)
+    observacao varchar(200),
+    hora datetime default current_timestamp
 );
 
 create table unidade (
