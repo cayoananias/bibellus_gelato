@@ -71,6 +71,12 @@ create table estoque (
     foreign key (id_unidade_fk) references unidade(id)
 );
 
+create table newsletter (
+    id int not null auto_increment primary key,
+    email varchar(255) not null unique,
+    data_inscricao datetime not null default current_timestamp
+);
+
 insert into empresa (nome,cnpj,inscricao,cnae,telefone,celular,email,site,endereco,cep)
 values (
   'bibellus varejo de sorvetes ltda',
