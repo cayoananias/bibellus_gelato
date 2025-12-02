@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bibellus Gelato - Contato</title>
+  <link rel="icon" type="image/x-icon" href="https://cayoananias.github.io/bibellus_gelato/images/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cayoananias.github.io/bibellus_gelato/site/style.css">
+  <script src="https://cayoananias.github.io/bibellus_gelato/site/script.js"></script>
+
+  <style>
+  .divao-contato {
+  background: linear-gradient(#fd75a290, #fd75a290),
+  url("https://i.pinimg.com/1200x/75/19/f0/7519f027e9a094954a832e34d9b62853.jpg")
+  center/cover;
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+
+  .divao-contato h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  }
+
+  .divao-contato p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  }
+
+  .contato-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  }
+
+  .info-bloco {
+  background: #fff8f2;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .info-bloco h2 {
+  color: #955a2d;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  }
+
+  .info-item {
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+  }
+
+  .info-item b {
+  color: #955a2d;
+  }
+
+  .form-bloco {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .form-bloco h2 {
+  color: #955a2d;
+  margin-bottom: 20px;
+  }
+
+  .form-bloco input,
+  .form-bloco textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #d8b58a;
+  background: #fff8f2;
+  font-family: inherit;
+  }
+
+  .form-bloco button {
+  width: 100%;
+  padding: 14px;
+  background: #fd75a2;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  }
+
+  .form-bloco button:hover {
+  background: #e75b8d;
+  }
+
+  @media (max-width: 900px) {
+  .contato-container {
+  grid-template-columns: 1fr;
+  }
+  }
+  </style>
+</head>
+
+<body>
+  <header></header>
+
+  <section class="divao-contato">
+    <h1>Fale Conosco</h1>
+    <p>Entre em contato com a equipe Bibellus Gelato</p>
+  </section>
+
+  <main class="contato-container">
+
+    <div class="info-bloco">
+      <h2>Informações de Contato</h2>
+
+      <div class="info-item">
+        <b>Email:</b><br>
+        comunicacoes@bibellusgelato.com.br
+      </div>
+
+      <div class="info-item">
+        <b>WhatsApp:</b><br>
+        (11) 98722-8735
+      </div>
+
+      <div class="info-item">
+        <b>Endereço:</b><br>
+        Rua Consolação, n­­° 2043 – Consolação<br>
+        São Paulo – SP
+      </div>
+    </div>
+
+    <div class="form-bloco" id="formulario">
+      <h2>Entre em Contato</h2>
+
+      <form action="https://formsubmit.co/comunicacoes@bibellusgelato.com.br" method="POST">
+        <input type="text" name="name" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
+
+        <button type="submit">Enviar Mensagem</button>
+        
+        <input type="hidden" name="_captcha" value="false">
+      </form>
+    </div>
+
+    <div class="form-bloco" id="formulario" style="grid-column: span 2;">
+      <h2>Assine nosso Newsletter</h2>
+    
+    <form action="newsletter.php" method="POST" style="grid-column: span 2;">
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <button type="submit">Inscrever</button>
+</form>
+
+      </div>
+
+  </main>
+
+  <footer></footer>
+</body>
+</html>
