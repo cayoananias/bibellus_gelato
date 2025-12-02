@@ -1,28 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibellus Gellato - Cardapio</title>
-    <link rel="icon" type="image/x-icon" href="https://cayoananias.github.io/bibellus_gelato/images/favicon/favicon.ico">
-    <link rel="stylesheet" href="https://cayoananias.github.io/bibellus_gelato/site/style.css">
-    <script src="https://cayoananias.github.io/bibellus_gelato/site/script.js"></script>
-    <style>
-      img{
-        display: block;
-        margin: auto;
-        height: 600px;
-      }
-    </style>
-</head>
-<body>
-  <header>
-  </header>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibellus Gelato - Cardápio</title>
+<link rel="icon" type="image/x-icon" href="https://cayoananias.github.io/bibellus_gelato/images/favicon/favicon.ico">
+<link rel="stylesheet" href="https://cayoananias.github.io/bibellus_gelato/site/style.css">
+<script src="https://cayoananias.github.io/bibellus_gelato/site/script.js"></script>
 
-  <main>
-    <img src="https://cayoananias.github.io/bibellus_gelato/images/CardapioBibellusGellato.png">
-  </main>
-  <footer>
-  </footer>
+<style>
+.hero-cardapio {
+  background: linear-gradient(#fd75a290, #fd75a290),
+  url("https://i.pinimg.com/1200x/75/19/f0/7519f027e9a094954a832e34d9b62853.jpg")
+  center/cover;
+  color: white;
+  height: 90vh;
+  padding: 80px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hero-cardapio h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-cardapio p {
+  margin-top: 12px;
+  font-size: 1.3rem;
+  max-width: 700px;
+}
+
+.cardapio-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.sabor-bloco {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff8f2;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.sabor-info {
+  flex: 1;
+}
+
+.sabor-info h2 {
+  color: #955a2d;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.sabor-info p {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.sabor-img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+  .sabor-bloco {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sabor-img {
+    width: 220px;
+    height: 220px;
+  }
+}
+</style>
+</head>
+
+<body>
+<header></header>
+
+<section class="hero-cardapio">
+  <h1>Cardápio</h1>
+  <p>Escolha entre nossos sabores deliciosos e refrescantes!</p>
+</section>
+
+<main class="cardapio-container">
+
+  <div class="sabor-bloco">
+    <div class="sabor-info">
+      <h2>Abacaxi ao Vinho</h2>
+      <p>Combinação do frescor e a acidez do abacaxi com o sabor aveludado do vinho, resultando em um gelado de sabor intenso e diferenciado.</p>
+      <p><b>Preço: R$ 4,50 (casquinha), R$ 13,00 (pequeno), R$ 18,00 (médio), R$ 23,00 (grande), R$ 28,00 (gigante)</b></p>
+    </div>
+    <img class="sabor-img" src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.Abacaxi%20ao%20vinho.png" alt="Sorvete de Abacaxi ao Vinho">
+  </div>
+
+  <div class="sabor-bloco">
+    <div class="sabor-info">
+      <h2>Açaí</h2>
+      <p>Combinação da intensidade natural da fruta com uma cremosidade incomparável, oferecendo um gelado vibrante e nutritivo que é pura essência tropical.</p>
+      <p><b>Preço: R$ 4,50 (casquinha), R$ 13,00 (pequeno), R$ 18,00 (médio), R$ 23,00 (grande), R$ 28,00 (gigante)</b></p>
+    </div>
+    <img class="sabor-img" src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.Aca%C3%AD.png" alt="Sorvete de Açaí">
+  </div>
+
+  <div class="sabor-bloco">
+    <div class="sabor-info">
+      <h2>Charge</h2>
+      <p>Uma sobremesa congelada inspirada no clássico chocolate, que combina a intensidade do chocolate ao leite, a textura cremosa do caramelo ou doce de leite e a crocância do amendoim.</p>
+      <p><b>Preço: R$ 4,50 (casquinha), R$ 13,00 (pequeno), R$ 18,00 (médio), R$ 23,00 (grande), R$ 28,00 (gigante)</b></p>
+    </div>
+    <img class="sabor-img" src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.Charge.png" alt="Sorvete sabor Charge">
+  </div>
+
+  <div class="sabor-bloco">
+    <div class="sabor-info">
+      <h2>Creme</h2>
+      <p>Um clássico atemporal: textura suave, sabor delicado e levemente adocicado, perfeito para quem gosta de um sorvete tradicional e versátil.</p>
+      <p><b>Preço: R$ 4,50 (casquinha), R$ 13,00 (pequeno), R$ 18,00 (médio), R$ 23,00 (grande), R$ 28,00 (gigante)</b></p>
+    </div>
+    <img class="sabor-img" src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.Creme.png" alt="Sorvete sabor Creme">
+  </div>
+
+    <div class="sabor-bloco">
+    <div class="sabor-info">
+      <h2>Flocos</h2>
+      <p>Cremosidade combinada com pedacinhos crocantes de chocolate, criando uma mistura equilibrada entre suavidade e textura.</p>
+      <p><b>Preço: R$ 4,50 (casquinha), R$ 13,00 (pequeno), R$ 18,00 (médio), R$ 23,00 (grande), R$ 28,00 (gigante)</b></p>
+    </div>
+    <img class="sabor-img" src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.Flocos.png" alt="Sorvete sabor Flocos">
+  </div>
+
+    <div class="sabor-bloco">
+    <div class="sabor-info">
+      <h2>Morango Trufado</h2>
+      <p>A união perfeita entre a leveza do sorvete de morango e a intensidade do chocolate trufado, formando uma experiência indulgente e irresistível.</p>
+      <p><b>Preço: R$ 4,50 (casquinha), R$ 13,00 (pequeno), R$ 18,00 (médio), R$ 23,00 (grande), R$ 28,00 (gigante)</b></p>
+    </div>
+    <img class="sabor-img" src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.Morango.Truf.png" alt="Sorvete sabor Morango Trufado">
+  </div>
+
+    <div class="sabor-bloco">
+    <div class="sabor-info">
+      <h2>Morango</h2>
+      <p>Refrescante e suave, feito com o sabor marcante do morango. Uma opção leve, frutada e vibrante, ideal para qualquer momento.</p>
+      <p><b>Preço: R$ 4,50 (casquinha), R$ 13,00 (pequeno), R$ 18,00 (médio), R$ 23,00 (grande), R$ 28,00 (gigante)</b></p>
+    </div>
+    <img class="sabor-img" src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.Morango.png" alt="Sorvete sabor Morango">
+  </div>
+
+    <div class="sabor-bloco">
+    <div class="sabor-info">
+      <h2>Napolitano</h2>
+      <p>Três clássicos em um só sorvete: chocolate, creme e morango em camadas harmoniosas, oferecendo variedade e sabor em cada colherada.</p>
+      <p><b>Preço: R$ 4,50 (casquinha), R$ 13,00 (pequeno), R$ 18,00 (médio), R$ 23,00 (grande), R$ 28,00 (gigante)</b></p>
+    </div>
+    <img class="sabor-img" src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.Napolitano.png" alt="Sorvete sabor Napolitano">
+  </div>
+
+    <div class="sabor-bloco">
+    <div class="sabor-info">
+      <h2>Pistache</h2>
+      <p>Sabor elegante e sofisticado, com notas levemente torradas e um perfume característico do pistache, resultando em um sorvete cremoso e único.</p>
+      <p><b>Preço: R$ 4,50 (casquinha), R$ 13,00 (pequeno), R$ 18,00 (médio), R$ 23,00 (grande), R$ 28,00 (gigante)</b></p>
+    </div>
+    <img class="sabor-img" src="https://cayoananias.github.io/bibellus_gelato/images/Sorv.Pistache.png" alt="Sorvete sabor Pistache">
+  </div>
+
+</main>
+
+<footer></footer>
 </body>
 </html>
