@@ -1,0 +1,9 @@
+passo-a-passo de como colocar o site pra funcionar:
+
+dê git clone no C:/xampp/htdocs
+
+abra o xampp e ligue tanto o apache quanto o mysql
+
+copie o conteúdo do banco.txt no workbench e o execute
+
+abra o link "http://localhost/bibellus/index.html" no navegador
