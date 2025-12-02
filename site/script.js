@@ -4,7 +4,7 @@
 function initHeader() {
   if (!document.querySelector('header')) return;
   let currentlink = window.location.href
-  if (currentlink.includes("cardapio.html") || currentlink.includes("about.html") || currentlink.includes("contato.html")) {
+  if (currentlink.includes("cardapio.html") || currentlink.includes("about.html") || currentlink.includes("contato.php")) {
     headertext = `
       <div onclick="location.assign('index.html')" style="cursor: pointer;display:flex;justify-content:center"><img src="https://cayoananias.github.io/bibellus_gelato/images/logo.png" style="height:36px"></img>
       <h1 style="display: inline">Bibellus Gelato</h1></div>
@@ -12,7 +12,7 @@ function initHeader() {
     `
     headertext += (!currentlink.includes("cardapio.html")) ? `<a href="cardapio.html">Cardápio</a>` : `<b>Cardápio</b>`
     headertext += (!currentlink.includes("about.html")) ? `<a href="about.html">Sobre Nós</a>` : `<b>Sobre Nós</b>`
-    headertext += (!currentlink.includes("contato.html")) ? `<a href="contato.html">Contato</a>` : `<b>Contato</b>`
+    headertext += (!currentlink.includes("contato.php")) ? `<a href="contato.php">Contato</a>` : `<b>Contato</b>`
     
     headertext += `
     </nav>`
