@@ -11,7 +11,7 @@
   <style>
   .divao-contato {
   background: linear-gradient(#fd75a290, #fd75a290),
-  url("https://i.pinimg.com/1200x/75/19/f0/7519f027e9a094954a832e34d9b62853.jpg")
+  url("https://i.pinimg.com/736x/90/6f/fe/906ffee8d97865460c8f5d5f6d25ec10.jpg")
   center/cover;
   color: white;
   padding: 80px 20px;
@@ -20,17 +20,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   justify-content: center;
   }
 
   .divao-contato h1 {
-  font-size: 2.4rem;
-  font-weight: bold;
+  font-size: 3rem;
+    font-weight: bold;
   }
 
   .divao-contato p {
-  margin-top: 10px;
-  font-size: 1.2rem;
+    margin-top: 12px;
+    font-size: 1.3rem;
+    max-width: 700px;
   }
 
   .contato-container {
